@@ -1,26 +1,26 @@
 require('dotenv').config();
 const mongoose = require("mongoose");
-const Celebrity = require("../models/User");
+const user = require("../models/User");
 
 
 
 const User = [
     {
-        username: "José Pérez",
-        userlastname: "Actriz, bióloga, guionista...",
+        username: "José",
+        userlastname: "Moreno Suárez",
         password: ""
 
     },
 
     {
-      username: "José Pérez",
-      userlastname: "Actriz, bióloga, guionista...",
+      username: "Raúl",
+      userlastname: "Ruíz Ramirez",
       password: ""
     },
 
     {
-      username: "José Pérez",
-      userlastname: "Actriz, bióloga, guionista...",
+      username: "Juan",
+      userlastname: "Fernández Tarancón",
       password: ""
     }
 ]
@@ -32,9 +32,9 @@ mongoose
     })
     .then(x => {
         console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
-        Celebrity.deleteMany()
+        User.deleteMany()
             .then(() => {
-                return Celebrity.create(celebrity);
+                return User.create(celebrity);
             })
             .then(() => {
                 console.log("succesfully added all the data");
